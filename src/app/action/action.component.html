@@ -1,0 +1,17 @@
+
+<table border=2 align="center" style="border-collapse: collapse">
+  <caption><h2>Available Mobiles </h2></caption>
+  <caption>*Double click on column name to show Ascending order of rows</caption>
+  <tr>
+    <th appSortDirective [sortKey]="'mobId'" [data]="mData">Mobile Id</th>
+    <th appSortDirective [sortKey]="'mobName'" [data]="mData">Mobile Name</th>
+    <th appSortDirective [sortKey]="'mobPrice'" [data]="mData">Mobile Price</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let m of mData">
+    <td>{{m.mobId}}</td>
+    <td>{{m.mobName}}</td>
+    <td>{{m.mobPrice | currency}}</td>
+    <td><input type="button" value="Delete" (click)="delete(m)" style="border-radius: 2px; "></td>
+  </tr>
+</table>
